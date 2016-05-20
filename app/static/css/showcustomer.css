@@ -1,3 +1,54 @@
-* {
-  font-family: monaco;
+body {
+	background: url(http://www.freebiesgallery.com/wp-content/uploads/2014/02/blurred-background-2.jpg);
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.container {
+	margin:0em auto;
+}
+#inline {
+	display:inline-block;
+	margin-left:4.5em;
+	margin-top:1em;
+	width:100em;
+	color:#CC9933;
+}
+#logout {
+	margin-top:-1.7em;
+	margin-left:29em;
+	color:#CC9933;
+}
+#dashboard {
+	margin-top:-3em;
+	margin-left:42em;
+}
+#container {
+	display:inline-block;
+	margin:0em auto;
+	width:80%;
+	margin-top:-1em;
+}
+#list1 {
+	font-size:1.5em;
+	list-style-type:none;
+	margin-left:5em;
+	color:#CC9933;
+}
+#align {
+	margin-left:3em;
+	margin-top:-1.5em;
+}
+#align2 {
+	margin-left:8em;
+	margin-top:-1.5em;
+}
+#align3 {
+	margin-left:4em;
+	margin-top:-1.5em;
+}
+#name {
+	font-weight:bold;
 }

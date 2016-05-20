@@ -12,59 +12,11 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../static/css/dispatch.css">
 </head>
-<style>
-.container {
-	margin:0em auto;
-}
-#inline {
-	display:inline-block;
-	margin-left:15em;
-	margin-top:2em;
-	width:100em;
-}
-#inline2 {
-	display:inline-block;
-	margin-top:1em;
-	margin-left:15em;
-}
-#inline3 {
-	display:inline-block;
-	margin-top:-2em;
-	margin-left:65.8em;
-	padding:0.2em;
-}
-#table {
-	width:80em;
-}
-#call {
-	display:inline-block;
-	margin-bottom:-0.2em;
-}
-#text {
-	display:inline-block;
-	margin-bottom:-0.2em;
-}
-#dispatch {
-	margin-left:78em;
-	margin-top:-3em;
-}
-#details {
-	display:inline-block;
-	margin-bottom:-0.2em;
-	margin-left:0.5em;
-}
-#center {
-	text-align:center;
-}
-#edit {
-	display:inline-block;
-	margin-bottom:-0.2em;
-}
-</style>
 <body>
 <div id="inline">
-	<h2>All Jobs <h4 id="inline3"><a href="/logout">Log Off</a></h2>
+	<h2 id="orange">All Jobs <h4 id="inline3"><a id="orange" href="/logout">Log Off</a></h2>
 		<form action="/getjob" id="dispatch">
 			<button class="btn btn-info"> Dispatch </button>
 		</form> 

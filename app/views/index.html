@@ -8,28 +8,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="../static/css/index.css">
 </head>
-<style>
-body {
-	/*background: url(http://vignette1.wikia.nocookie.net/pokemon/images/e/e2/Taylor_Skarmory_Swift.png/revision/latest?cb=20140808220648);*/
-	background: url(http://vignette3.wikia.nocookie.net/pokemon/images/c/c2/Head_of_Security_Electabuzz_Swift.png/revision/latest?cb=20140927031340);
-	background-repeat: no-repeat;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	/*background: url(http://pokemon.wikia.com/wiki/File:Taylor_Skarmory_Swift.png);*/
-}
-#container {
-	width:80em;
-	margin:0em auto;
-}
-#indexheader {
-	margin: 0em auto;
-	width: 4.5em;
-	font-size:3em;
-}
-</style>
 <body>
 <div id='container'>
 <h1 id="indexheader">Swift Shift</h1>
@@ -42,8 +22,8 @@ body {
           	{% endfor %}
         {% endif %}
       	{% endwith %}
-	    <h1>Registration</h1>
-	    <form action='/register' method='post'>
+	    <h1 id="form">Registration</h1>
+	    <form id="form" action='/register' method='post'>
 	        <div class="form-group">
 	          	<label for="firstname">First Name:</label>
 	          	<input type="text" class="form-control" id="firstname" name='first_name'>
@@ -67,7 +47,7 @@ body {
 	    <button type="submit" class="btn btn-info">Register</button>
 	    </form>
     </div>
-    <div class='col-md-6'>
+    <div id="form" class='col-md-6'>
       	<h1>Login</h1>
       	<form action='/login' method='post'>
 	        <div class="form-group">
