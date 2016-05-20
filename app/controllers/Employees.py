@@ -201,16 +201,16 @@ class Employees(Controller):
         return self.load_view('fools.html')
 
     # def call(self):
-    #     account = "AC266b857d0aa9fed47804dc70894f7811"
-    #     token = "cfbc9f1d252249675be1c5b463034e19"
+    #     account = "#####################"
+    #     token = "########################"
     #     client = TwilioRestClient(account, token)
     #     client.calls.create(to="2097539260", from_="12093170952", url="http://twimlets.com/holdmusic?Bucket=com.twilio.music.ambient")
     #     return redirect('/admindash')
 
     # def text(self):
-    #     account = "AC266b857d0aa9fed47804dc70894f7811"
-    #     token = "cfbc9f1d252249675be1c5b463034e19"
+    #     account = "#########################"
+    #     token = "##########################"
     #     client = TwilioRestClient(account, token)
     #     client.messages.create(to="+12097539260", from_="+12093170952", body="name")
-    #     client.messages.get('SMded4cb9e199b78e382b3e98d035bcfa3') 
+    #     client.messages.get('###########################') 
     #     return redirect('/admindash')
