@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<style>
+.container {
+	margin:0em auto;
+}
+#inline {
+	display:inline-block;
+	margin-left:55.5em;
+	margin-top:-1.5em;
+	width:100em;
+}
+#inline2 {
+	display:inline-block;
+	margin-top:-2.7em;
+	margin-left:77.8em;
+}
+#inline3 {
+	display:inline-block;
+	margin-top:-3.6em;
+	margin-left:85.8em;
+	padding:0.2em;
+}
+#table {
+	width:80em;
+}
+#call {
+	display:inline-block;
+	margin-bottom:-0.2em;
+}
+#text {
+	display:inline-block;
+	margin-bottom:-0.2em;
+}
+</style>
+<body>
+<div class="container">
+	<h2>Employees List <h4 id="inline"><a href="/logout">Log Off</a></h4>
+		<form action="/editprofile/{{session['id']}}" id="inline2">
+			<button class="btn btn-info"> Edit Profile </button>
+		</form> 
+		<form action="/dispatch" id="inline3">
+			<button class="btn btn-info"> Dispatch </button>
+		</form> 
+	</h2>         
+	<table id="table" class="table table-bordered">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Hiredate</th>
+				<th>Contact Number</th>
+				<th>Employee Level</th>
+				<th>Address</th>
+				<th>Working?</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for employee in employees %}
+			<tr>
+				<td>{{employee['id']}}</td>
+				<td><a href="/showemployee/{{employee['id']}}">{{employee['first_name']}} {{employee['last_name']}}</a></td>
+				<td>{{employee['email']}}</td>
+				<td>{{employee['hiredate']}}</td>
+				<td>{{employee['phone']}}</td>
+				<td>{{employee['employee_level']}}</td>
+				<td>{{employee['address']}}</td>
+				<td>Yes</td>
+				<td><form id="call" action="/call">
+					<input type="submit" class="btn btn-info" value="call">
+				</form>
+				<form id="text" action="/text">
+					<input type="submit" class="btn btn-info" value="text">
+				</form> 
+				</td>
+			</tr>
+			{% endfor %}
+	    </tbody>
+	</table>
+</div>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+</body>
+</html>	

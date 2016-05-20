@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>New Employee</title>
+<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<style>
+#container {
+	width:80em;
+	margin:0em auto;
+}
+#indexheader {
+	margin: 0em auto;
+	width: 4.5em;
+	font-size:3em;
+}
+#width {
+	width:80em;
+}
+#logoff {
+	display:inline-block;
+	font-size:0.9em;
+	margin-left:14em;
+	margin-top:1em;
+}
+#return {
+	display:inline-block;
+	font-size:1em;
+	margin-left:29em;
+	margin-top:-3.2em;
+}
+</style>
+<body>
+<div id='container'>
+  	<div class='row'>
+    	<div class='col-md-6'>
+	    <h3 id="width">Add a new user <a id="logoff" href="/logout">Log Off</a></h3>
+		{% with messages = get_flashed_messages() %}
+        {% if messages %}
+          	{% for message in messages %}
+            	<p>{{message}}</p>
+          	{% endfor %}
+        {% endif %}
+      	{% endwith %}
+	    <form action='/process' method='post'>
+	        <div class="form-group">
+	          	<label for="firstname">First Name:</label>
+	          	<input type="text" class="form-control" id="firstname" name='first_name'>
+	        </div>
+	        <div class="form-group">
+	          	<label for="lastname">Last Name:</label>
+	          	<input type="text" class="form-control" id="lastname" name='last_name'>
+	        </div>
+	        <div class="form-group">
+	          	<label for="email">Email address:</label>
+	          	<input type="email" class="form-control" id="email" name='email'>
+	        </div>
+	        <div class="form-group">
+	          	<label for="password">Password:</label>
+	          	<input type="password" class="form-control" id="password" name='password'>
+	        </div>
+	        <div class="form-group">
+	          	<label for="confirmpassword">Confirm Password:</label>
+	          	<input type="password" class="form-control" id="confirm_password" name='confirm_password'>
+	        </div>
+	        <!-- <div class="form-group">
+	          	<label for="hiredate">Hire Date:</label>
+	          	<input type="text" class="form-control" id="hiredate" name='hiredate'>
+	        </div>
+	        <div class="form-group">
+	          	<label for="phone">Contact Number:</label>
+	          	<input type="text" class="form-control" id="phone" name='phone'>
+	        </div>
+	        <div class="form-group">
+	          	<label for="address">Address:</label>
+	          	<input type="text" class="form-control" id="address" name='address'>
+	        </div> -->
+	    <button type="submit" class="btn btn-info">Create</button>
+	    </form>
+	    <form action="/admindash">
+	    	<button id="return" class="btn btn-info">Return to Dashboard</button>
+	    </form>
+    </div>
+</div>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>Employee Contact Info</title>
+<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<style>
+.container {
+	margin:0em auto;
+}
+#inline {
+	display:inline-block;
+	margin-left:4.5em;
+	margin-top:1em;
+	width:100em;
+}
+#logout {
+	margin-top:-1.7em;
+	margin-left:29em;
+}
+#dashboard {
+	margin-top:-3em;
+	margin-left:42em;
+}
+#container {
+	display:inline-block;
+	margin:0em auto;
+	width:80%;
+	margin-top:-1em;
+}
+#list1 {
+	font-size:1.5em;
+	list-style-type:none;
+	margin-left:5em;
+}
+#align {
+	margin-left:3em;
+	margin-top:-1.5em;
+}
+#align2 {
+	margin-left:8em;
+	margin-top:-1.5em;
+}
+#align3 {
+	margin-left:4em;
+	margin-top:-1.5em;
+}
+#name {
+	font-weight:bold;
+}
+</style>
+<body>
+<div class="container">
+	<div id="container">
+	<h2 id="inline">Employees Contact Info <h3 id="logout"><a href="/logout">Log Off</a></h3>
+	<form id="dashboard" action="/dashboard">
+		<button class="btn btn-info">Dashboard</button>
+	</form>
+	</h2>  
+	</div> 
+	<div>      
+		<ul id="list1">
+			<li><h3 id="name">Name: </h3><h3 id="align">{{employees[0]['first_name']}} {{employees[0]['last_name']}}</h3></li>
+			<li><h3 id="name">Email: </h3><h3 id="align">{{employees[0]['email']}}</h3></li>
+			<li><h3 id="name">Contact Number: </h3><h3 id="align2">{{employees[0]['phone']}}</h3></li>
+			<li><h3 id="name">Address: </h3><h3 id="align3">2804 Woodbridge Ct., Modesto</h3></li>
+		</ul>
+	</div>
+</div>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+</body>
+</html>	

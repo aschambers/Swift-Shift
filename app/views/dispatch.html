@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>Dispatch Job Page</title>
+<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<style>
+.container {
+	margin:0em auto;
+}
+#inline {
+	display:inline-block;
+	margin-left:15em;
+	margin-top:2em;
+	width:100em;
+}
+#inline2 {
+	display:inline-block;
+	margin-top:1em;
+	margin-left:15em;
+}
+#inline3 {
+	display:inline-block;
+	margin-top:-2em;
+	margin-left:65.8em;
+	padding:0.2em;
+}
+#table {
+	width:80em;
+}
+#call {
+	display:inline-block;
+	margin-bottom:-0.2em;
+}
+#text {
+	display:inline-block;
+	margin-bottom:-0.2em;
+}
+#dispatch {
+	margin-left:78em;
+	margin-top:-3em;
+}
+#details {
+	display:inline-block;
+	margin-bottom:-0.2em;
+	margin-left:0.5em;
+}
+#center {
+	text-align:center;
+}
+#edit {
+	display:inline-block;
+	margin-bottom:-0.2em;
+}
+</style>
+<body>
+<div id="inline">
+	<h2>All Jobs <h4 id="inline3"><a href="/logout">Log Off</a></h2>
+		<form action="/getjob" id="dispatch">
+			<button class="btn btn-info"> Dispatch </button>
+		</form> 
+	<table id="table" class="table table-bordered">
+		<thead id="center">
+			<tr>
+				<th id="center">Name</th>
+				<th id="center">Address</th>
+				<th id="center">Contact Number</th>
+				<th id="center">Status</th>
+			</tr>
+		</thead>
+		<!-- <tbody>
+			<tr>
+				<td id="center">David Smart</td>
+				<td id="center">456 Granite Ln, San Jose</td>
+				<td id="center">4156902231</td>
+				<td id="center">Complete
+				<form id="details" action="/details">
+					<input type="submit" class="btn btn-info" value="details">
+				</form></td>
+			</tr>
+	    </tbody> -->
+	</table>
+</div>
+<div id="inline2">
+	<h2>Current Jobs</h2>
+	<table id="table" class="table table-bordered">
+		<thead>
+			<tr>
+				<th id="center">Name</th>
+				<th id="center">Address</th>
+				<th id="center">Contact Number</th>
+				<th id="center">Status</th>
+				<th id="center">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for job in jobs %}
+			<tr>
+				<td id="center">{{job['first_name']}} {{job['last_name']}}</td>
+				<td id="center">{{job['address']}}</td>
+				<td id="center">{{job['phone']}}</td>
+				<td id="center">                                       
+					<div class="dropdown">
+					<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">Select
+					<span class="caret"></span></button>
+					<ul class="dropdown-menu">
+						<li><a href="/dispatchone" name="onhold">On Hold</a></li>
+						<li><a href="/dispatchone" name="postpone">Postponed</a></li>
+						<li><a href="/dispatchtwo" name="complete">Complete</a></li>
+						<li><a href="/dispatchtwo" name="incomplete">Incomplete</a></li>
+					</ul>
+					</div>
+				</td>
+				<td id="center"><form id="call" action="/call">
+					<input type="submit" class="btn btn-info" value="call">
+				</form>
+				<form id="text" action="/text">
+					<input type="submit" class="btn btn-info" value="text">
+				</form> 
+				<form id="edit" action="/fools">
+					<input type="submit" class="btn btn-info" value="edit">
+				</form> 
+				</td>
+			</tr>
+			{% endfor %}
+	    </tbody>
+	</table>
+</div>
+
+
+
+<!-- <div class="container">
+	<h3 id="call">Call Employee</h3>
+	<form action="/call">
+		<button class="btn btn-info">Call</button>
+	</form>     
+	<h3 id="call">Text Employee</h3>
+	<form action="/text">
+		<input type="text" name="text">
+		<input type="submit" class="btn btn-info" value="text">
+	</form>      
+</div> -->
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+</body>
+</html>	
